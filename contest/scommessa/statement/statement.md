@@ -1,6 +1,5 @@
-# Sport intellettuali (scommessa)
+<div style="font-variant: small-caps">Difficoltà: *2*</div>
 
-_Difficoltà: 2_
 Romeo è un grande appassionato di sport intellettuali, e adora ritrovarsi con gli amici per seguire le
 competizioni internazionali più avvincenti di questo tipo. Di recente, il gruppo di amici si è appassionato
 a uno sport molto particolare. In questo gioco, un mazzo di carte numerate da 0 a $N-1$ (dove $N$ è dispari)

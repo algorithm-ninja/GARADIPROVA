@@ -1,5 +1,3 @@
-# Crittografia LWF (lwf)
-
 <div style="font-variant: small-caps">Difficoltà: *1*</div>
 
 Luca e William devono sovente scambiarsi delle segretissime informazioni

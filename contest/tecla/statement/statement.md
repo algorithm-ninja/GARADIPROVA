@@ -1,5 +1,3 @@
-# Appetito aracnide (tecla)
-
 <div style="font-variant: small-caps">Difficoltà: *2*</div>
 
 Ape Maya è rimasta intrappolata in un nodo della tela di Tecla, un ragno molto temuto tra le api

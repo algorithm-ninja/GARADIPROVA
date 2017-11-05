@@ -1,84 +1,45 @@
-/* solutore oddcycle
-   Romeo 2017-03-15
-*/
-
+#include <fstream>
 #include <iostream>
-#include <cassert>
-#include <cstring>
 #include <vector>
-
-#define DEBUG 0
 
 using namespace std;
 
-const unsigned MAXN = 30;
-int seen[MAXN];
-int sex[MAXN];
-int cycle[MAXN], posW = 0;
+const int MAX_N = 150;
 
-int N, M, L;
-vector<int> adj[MAXN];
+int solve(int tc) {
+  int nums[MAX_N] = {};
+  int parity[MAX_N] = {};
+  int prefix[MAX_N] = {};
+  int suffix[MAX_N] = {};
 
-bool odd_cycle(int node, int mysex) {
-  if ( seen[node] ) {
-    if ( sex[node] != mysex ) {
-      cycle[posW++] = node;
-      L = posW;
-      return true;
-    }
-    else
-      return false;
+  int N;
+  cin >> N;
+
+  for (int i = 0; i < N; i++) {
+    cin >> nums[i];
+    parity[i] = (nums[i] % 2 == 0) ? 1 : -1;
   }
-  seen[node] = 1;
-  sex[node] = mysex;
-  cycle[posW++] = node;
-  for (int next: adj[node])
-    if ( odd_cycle(next, 1-mysex) )
-      return true;
-  posW--;
-  return false;
+
+  for (int i = 0; i < N - 1; i++)
+    prefix[i + 1] = prefix[i] + parity[i];
+  for (int i = N - 1; i >= 1; i--)
+    suffix[i - 1] = suffix[i] + parity[i];
+
+  vector<int> sol;
+  for (int i = 0; i < N; i++)
+    if (prefix[i] == 0 && suffix[i] == 0)
+      sol.push_back(nums[i]);
+
+  cout << "Case #" << tc << ": ";
+  cout << sol.size() << endl;
+  for (int n : sol)
+    cout << n << ' ';
+  cout << endl;
 }
 
 int main() {
-    int T;
-    cin >> T;
-
-    for (int t = 1; t <= T; t++) {
-	    memset(seen, 0, sizeof seen);
-	    memset(sex, 0, sizeof sex);
-	    memset(cycle, 0, sizeof cycle);
-	    L = 0;
-	    posW = 0;
-
-	    cin >> N >> M;
-	    cerr << "- " << N << " " << M << endl;
-	    for (int i=0; i<N; i++) adj[i].clear();
-
-	    for (int i=0; i<M; i++) {
-		int a, b;
-		cin >> a >> b;
-		assert(0 <= a && a < N);
-		assert(0 <= b && b < N);
-		adj[a].push_back( b );
-		adj[b].push_back( a );
-	    }
-
-	    assert( odd_cycle(0, 0) );
-
-	    int visitedTwice = cycle[L-1];
-	    bool repeat = false;
-	    for (int i=L-2; i >= 0; i--) {
-		if ( repeat )
-		    cycle[L++] = cycle[i];
-		if ( cycle[i] == visitedTwice )
-		    repeat = true;
-	    }    
-
-	    cout << "Case #" << t << ":" << endl << L-1 << endl;
-	    for (int i=0; i<L; i++)
-	      cout << cycle[i] << " ";
-	    cout << endl;
-    }
-
-    return 0;
+  int T;
+  cin >> T;
+  for (int i = 1; i <= T; i++)
+    solve(i);
 }

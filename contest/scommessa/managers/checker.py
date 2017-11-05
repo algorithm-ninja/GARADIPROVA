@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from sys import argv, exit, stderr
+from itertools import accumulate
 from parser import Parser
-
+from sys import argv, exit, stderr
 
 if len(argv) != 3:
     print("Usage: %s input_file output_file" % argv[0], file=stderr)
@@ -11,39 +11,35 @@ if len(argv) != 3:
 task_input = open(argv[1], "r")
 human_output = open(argv[2], "r")
 
-#print(task_input.read(), file=stderr)
-#print(human_output.read(), file=stderr)
-#exit(0)
-
 # reading input file and generating correct output
 T = int(task_input.readline())
 
-edges = [[]]
-for i in range(T):
-    edges.append([])
-    N, M = map(int, task_input.readline().split())
-    for j in range(M):
-        a, b = tuple(map(int, task_input.readline().split()))
-        edges[i+1].append((a, b))
-        edges[i+1].append((b, a))
+outputs = [[]]
+for _ in range(T):
+    task_input.readline()
+    data = list(map(int, task_input.readline().split()))
+    parity = [-1 if x % 2 == 1 else 1 for x in data]
+    prefix = [0] + list(accumulate(parity))
+    suffix = (list(reversed(list(accumulate(reversed(parity))))) + [0])[1:]
+    outputs.append(
+        set(data[i] for i in range(len(data))
+            if prefix[i] == 0 and suffix[i] == 0))
 
 
 def evaluate(num, stream):
-    current_edges = edges[num]
-    lung = stream.int()
-    prev = stream.int()
-    start = prev
-    for i in range(lung):
-        nxt = stream.int()
-        if (prev,nxt) not in current_edges:
-            return 0.0, "Arco non esistente"
-            print("arco non esistente", file=stderr)
-        prev = nxt
-    if start != prev:
-        return 0.0, "Non è un ciclo"
-        print("no ciclo", file=stderr)
+    correct_output = outputs[num]
+    K = stream.int()
+    output = []
+    for i in range(K):
+        output.append(stream.int())
     stream.end()
-    return 1.0
+    output_set = set(output)
+    if len(output) != len(output_set):
+        return 0.0, "Elementi duplicati"
+    if output_set == correct_output:
+        return 1.0
+    else:
+        return 0.0
 
 
 parser = Parser(evaluate, T, human_output, int_max_len=20, strict_spaces=False)

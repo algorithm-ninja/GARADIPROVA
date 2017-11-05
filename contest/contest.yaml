@@ -4,6 +4,8 @@ description: |
 
 duration: 1000000000
 tasks:
+    - lwf
+    - scommessa
     - tecla
 users:
     - token: demo

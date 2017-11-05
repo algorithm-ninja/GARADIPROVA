@@ -7,8 +7,9 @@ riguardo alle selezioni territoriali, sotto forma di numeri interi $N$. Per
 evitare di essere scoperti, hanno quindi deciso di inventare un nuovo codice
 crittografico, che hanno chiamato codice _Luca-William-Fibonacci_ (LWF).
 
-In questo codice, ogni numero intero $N$ viene tradotto in una sequenza $s_0 s_1
-\dots s_k$ di cifre binarie `'0'` e `'1'`, di cui l’ultima è un `'1'`, in
+In questo codice, ogni numero intero $N$ viene tradotto in una sequenza
+$s_0 s_1 \ldots s_k$
+di cifre binarie `'0'` e `'1'`, di cui l’ultima è un `'1'`, in
 maniera tale che:
 
 $$ N = \sum_{i=0}^{k} s_i \cdot F_i $$

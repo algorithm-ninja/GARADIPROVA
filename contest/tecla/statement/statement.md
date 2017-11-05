@@ -78,8 +78,8 @@ Case #2:
 Nel **primo caso di esempio**, la tela di Tecla è come nella figura seguente,
 dove il percorso da seguire è evidenziato in rosso:
 
-FIGURA1
+![Picture 1](fig1.png "Picture 1")
 
 Nel **secondo caso di esempio**, la tela e il percorso sono:
 
-FIGURA2
+![Picture 2](fig2.png "Picture 2")

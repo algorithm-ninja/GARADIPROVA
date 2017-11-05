@@ -41,14 +41,12 @@ def run(N, M, T):
         g.addedges(M-g.M())
     # bipartito piu' almeno un arco mal fatto
     if T == 6:
-        assert False # TODO: not supported
-        assert M >= 2*N
-        assert M < N*N/4
-        g = ugraph(N)
-        g.addedges(M-N, edgerange(g,[0,N/2],[N/2,N]))
-        g += (choice(xrange(0,N/2)),choice(xrange(0,N/2)))
-        g.connect()
-        g.addedges(M-g.M(), edgerange(g,[0,N/2],[N/2,N]))
+        N1 = randint(1,N-1)
+        N2 = N - N1
+        g = ugraph(N1, N2, type='bipartite')
+        r = xrange(0,N1) if (N1>1 and randint(0,1)) or N2==1 else xrange(N1,N)
+        g += sample(r, 2)
+        g.addedges(M-N, edgerange(g,[0,N1],[N1,N]))
     g.zero_based = True
     g.shuffle()
     print g

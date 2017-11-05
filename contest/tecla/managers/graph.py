@@ -1,5 +1,7 @@
 #!/usr/bin/env pypy
 
+# versione 17.11.05
+#
 # Libreria di funzioni sui grafi.
 #
 # classe astratta graph, derivate ugraph (grafo non diretto) e dgraph(grafo diretto).
@@ -144,7 +146,7 @@ class graph:
 			if len(E) > 0 and isinstance(E.__iter__().next(),list):
 				E = [self.cod(e) for e in E]
 			E = sortedset(E)
-		if len(E)==0 and N > 1:
+		if len(E)==0 and (N > 1 or type == 'bipartite'):
 			if type == 'random':
 				E = sortedset(lsample(self.mMax(), M))
 			if type == 'connected':
@@ -179,6 +181,23 @@ class graph:
 				for i in xrange(1,N):
 					E.add(self.cod([0,i]))
 					E.add(self.cod([i,(i+1)%N]))
+			if type == 'bipartite':
+				self.V=N+M
+				NN = tuple(sorted([N,M]))
+				idx = [-1] + list(sorted(sample(xrange(NN[1]), NN[0]-1))) + [NN[1]]
+				inv = []
+				for i in xrange(NN[1]):
+					inv.append(inv[-1] if i else 0)
+					while idx[inv[i]+1] < i:
+						inv[i] += 1
+				if M < N:
+					idx, inv = inv, idx
+				for i in xrange(NN[0]):
+					if idx[i] >= 0:
+						E.add(self.cod([randint(NN[0],NN[0]+idx[i]+1),i]))
+				for i in xrange(NN[1]):
+					if inv[i] >= 0:
+						E.add(self.cod([randint(inv[i]+1),NN[0]+i]))
 			# eventualmente aggiungere: gear, caterpillar/lobster
 		self.E=E
 		if w is None:

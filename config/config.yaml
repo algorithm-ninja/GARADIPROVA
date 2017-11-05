@@ -1,0 +1,29 @@
+# Address to bind the server to
+address: 0.0.0.0
+port: 1234
+
+# Databases
+logfile: log.sqlite3
+db: db.sqlite3
+
+# Store dir for files and statements
+storedir: ./files/
+statementdir: ./files/statements/secret/
+# Prefix of the public url for a task statement
+web_statementdir: /statements/secret/
+
+# Queue size for input generation
+queue_size: 64
+
+# Password for the admin
+admin_token: secret
+
+# Number of proxies
+num_proxies: 0
+
+# Path of the contest
+contest_path: ./contest/
+contest_zips: ./zips/
+
+# Log level: DEBUG INFO WARNING ERROR
+log_level: INFO

@@ -1,4 +1,4 @@
-<div style="font-variant: small-caps">Difficoltà: *2*</div>
+Difficoltà: *2*
 
 Romeo è un grande appassionato di sport intellettuali, e adora ritrovarsi con gli amici per seguire le
 competizioni internazionali più avvincenti di questo tipo. Di recente, il gruppo di amici si è appassionato
@@ -37,13 +37,28 @@ Il file `output.txt` deve essere composto da due righe, contenenti:
 
 ## Esempi di input/output
 
+***
+
+**Input:**
 ```
-2                                 Case #1: 1
-3                                 0
-1 2 0                             Case #2: 2
-11                                2 8
-1 0 2 6 4 5 3 9 8 10 7
+2
+3
+1 2 0
+11
+1 0 2 6 4 5 3 9 8 10
 ```
+
+***
+
+**Output:**
+```
+Case #1: 1
+0
+Case #2: 2
+2 8
+```
+
+***
 
 ## Spiegazione
 

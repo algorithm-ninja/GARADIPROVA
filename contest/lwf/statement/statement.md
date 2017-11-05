@@ -1,4 +1,4 @@
-<div style="font-variant: small-caps">Difficoltà: *1*</div>
+Difficoltà: *1*
 
 Luca e William devono sovente scambiarsi delle segretissime informazioni
 riguardo alle selezioni territoriali, sotto forma di numeri interi $N$. Per
@@ -16,11 +16,9 @@ dove $F_i$ è il numero di Fibonacci $i$-esimo. Più informalmente, una cifra $1
 in posizione $i$ nella sequenza indica che il numero di Fibonacci $i$-esimo fa
 parte della somma che ricostruisce il numero $N$.
 
-<div style="background-color: lightgrey">
 La sequenza dei numeri di Fibonacci è definita in maniera ricorsiva: i primi due
 termini della sequenza sono $F_0 = 1$ e $F_1 = 1$, mentre ognuno dei successivi
 viene calcolato sommando i due precedenti $F_i = F_{i-1} + F_{i-2}$.
-</div>
 
 Per esempio, consideriamo la sequenza `1011001` di lunghezza $k = 7$. Visto che
 i primi $7$ numeri di Fibonacci sono:
@@ -50,10 +48,23 @@ sequenza di cifre binarie che termina con `'1'` corrispondente ad $N$.
 
 ## Esempi di input/output
 
-| **input** | **output** |
-|-----------|------------|
-| 19        | 1011001    |
-| 9         | 11101      |
+***
+
+**Input:**
+```
+19
+9
+```
+
+***
+
+**Output:**
+```
+1011001
+11101
+```
+
+***
 
 ## Spiegazione
 

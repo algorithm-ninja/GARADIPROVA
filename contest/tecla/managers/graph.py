@@ -1,6 +1,6 @@
 #!/usr/bin/env pypy
 
-# versione 17.11.05
+# versione 17.11.06
 #
 # Libreria di funzioni sui grafi.
 #
@@ -192,6 +192,7 @@ class graph:
 						inv[i] += 1
 				if M < N:
 					idx, inv = inv, idx
+					NN = [N,M]
 				for i in xrange(NN[0]):
 					if idx[i] >= 0:
 						E.add(self.cod([randint(NN[0],NN[0]+idx[i]+1),i]))

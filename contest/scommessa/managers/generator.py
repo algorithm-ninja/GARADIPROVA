@@ -43,6 +43,7 @@ if __name__ == "__main__":
     S, _ = map(int, argv[1:])
     seed(S)
     T = 10
+    print(T)
     for _ in range(T):
         N = randint(1, (MAXN - 1) // 2)
         N = 2 * N + 1

@@ -3,5 +3,7 @@ from limits import MAXN
 import sys
 
 f = sys.stdin.readlines()
-N = int(f[0].strip())
-assert 1 <= N <= MAXN
+T = int(f[0].strip())
+for i in range(T):
+    N = int(f[i + 1].strip())
+    assert 1 <= N <= MAXN

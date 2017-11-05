@@ -1,2 +1,1 @@
-MAXN = 30
-MAXM = 100
+MAXN = 100

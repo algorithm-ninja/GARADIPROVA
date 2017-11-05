@@ -39,18 +39,17 @@ Il file `output.txt` deve essere composto da due righe, contenenti:
 ## Esempi di input/output
 
 ```
-3                                 1
-1 2 0                             0
-```
-
-```
-11                                2
-1 0 2 6 4 5 3 9 8 10 7            2 8
+2                                 Case #1: 1
+3                                 0
+1 2 0                             Case #2: 2
+11                                2 8
+1 0 2 6 4 5 3 9 8 10 7
 ```
 
 ## Spiegazione
 
 Nel **primo caso di esempio**, l’unica mossa possibile è eliminare le carte 1 e 2 per cui rimane sul tavolo necessariamente la carta 0.
+
 Nel **secondo caso di esempio** sono invece possibili diverse sequenze di mosse. Una delle sequenze che lasciano la carta 2 è la seguente:
 
 ```

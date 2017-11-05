@@ -1,6 +1,6 @@
 # Appetito aracnide (tecla)
 
-_Difficoltà: 2_
+<div style="font-variant: small-caps">Difficoltà: *2*</div>
 
 Ape Maya è rimasta intrappolata in un nodo della tela di Tecla, un ragno molto temuto tra le api
 dell’alveare. Tecla si affretta ad afferrarla ma, quando giunge su quel nodo, si accorge di non avere
@@ -38,16 +38,20 @@ ripetizioni).
 
 ## Esempi di input/output
 
-```
-3 3                  3
-0 1                  0 2 1 0
+<table>
+  <tbody>
+    <tr>
+      <th align="center">inputttttttttttttttt</th>
+      <th align="center">outputtttttttttttttttttttttttttttt</th>
+    </tr>
+    <tr>
+      <td align="left"><pre>2
+3 3
+0 1
 1 2
 2 0
-```
-
-```
-8 12                 7
-0 1                  0 5 6 3 4 2 3 0
+8 12
+0 1
 1 2
 2 3
 3 0
@@ -58,16 +62,26 @@ ripetizioni).
 6 7
 7 0
 0 5
-6 3
-```
+6 3</pre>
+      </td>
+      <td align="left"><pre>Case #1:
+3
+0 2 1 0
+Case #2:
+7
+0 5 6 3 4 2 3 0</pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Spiegazione
 
-Nel *primo caso di esempio*, la tela di Tecla è come nella figura seguente, dove il percorso da seguire è
-evidenziato in rosso:
+Nel **primo caso di esempio**, la tela di Tecla è come nella figura seguente,
+dove il percorso da seguire è evidenziato in rosso:
 
 FIGURA1
 
-Nel *secondo caso di esempio*, la tela e il percorso sono:
+Nel **secondo caso di esempio**, la tela e il percorso sono:
 
 FIGURA2

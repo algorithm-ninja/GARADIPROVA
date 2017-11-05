@@ -1,73 +1,65 @@
-# Appetito aracnide (tecla)
+# Crittografia LWF (lwf)
 
-_Difficoltà: 2_
+<div style="font-variant: small-caps">Difficoltà: *1*</div>
 
-Ape Maya è rimasta intrappolata in un nodo della tela di Tecla, un ragno molto temuto tra le api
-dell’alveare. Tecla si affretta ad afferrarla ma, quando giunge su quel nodo, si accorge di non avere
-appetito, e dice “BLEAH”. Va detto che l’appetito dei ragni è molto particolare: ogni volta che percorrono
-un filamento della loro rete, essi invertono lo stato del loro stomaco tra “SLURP” e “BLEAH”. Tecla deve
-quindi farsi un giretto nella rete sperando di tornare da Maya in stato “SLURP”.
+Luca e William devono sovente scambiarsi delle segretissime informazioni
+riguardo alle selezioni territoriali, sotto forma di numeri interi $N$. Per
+evitare di essere scoperti, hanno quindi deciso di inventare un nuovo codice
+crittografico, che hanno chiamato codice _Luca-William-Fibonacci_ (LWF).
 
-La tela di Tecla è composta da $N$ nodi (numerati da $0$ a $N - 1$) connessi tra loro da $M$ filamenti. Tecla
-e Ape Maya all’inizio si trovano entrambe nel nodo $0$, e ogni filamento può essere attraversato da Tecla
-in entrambe le direzioni. Aiuta Tecla ad individuare una passeggiata funzionale al buon appetito!
+In questo codice, ogni numero intero $N$ viene tradotto in una sequenza $s_0 s_1
+\dots s_k$ di cifre binarie `'0'` e `'1'`, di cui l’ultima è un `'1'`, in
+maniera tale che:
+
+$$ N = \sum_{i=0}^{k} s_i \cdot F_i $$
+
+dove $F_i$ è il numero di Fibonacci $i$-esimo. Più informalmente, una cifra $1$
+in posizione $i$ nella sequenza indica che il numero di Fibonacci $i$-esimo fa
+parte della somma che ricostruisce il numero $N$.
+
+<div style="background-color: lightgrey">
+La sequenza dei numeri di Fibonacci è definita in maniera ricorsiva: i primi due
+termini della sequenza sono $F_0 = 1$ e $F_1 = 1$, mentre ognuno dei successivi
+viene calcolato sommando i due precedenti $F_i = F_{i-1} + F_{i-2}$.
+</div>
+
+Per esempio, consideriamo la sequenza `1011001` di lunghezza $k = 7$. Visto che
+i primi $7$ numeri di Fibonacci sono:
+
+$1 \quad 1 \quad 2 \quad 3 \quad 5 \quad 8 \quad 13$
+
+il numero $N$ corrispondente è pari a $1 + 2 + 3 + 13 = 19$
+
+Luca ha già implementato l’algoritmo di decodifica (descritto come sopra), che
+da una sequenza di cifre binarie ricostruisce il numero $N$. Tuttavia William è
+ancora in alto mare con l’algoritmo di codifica, che dato un numero $N$ dovrebbe
+produrre una sequenza di cifre binarie corrispondente. Implementalo tu!.
 
 ## Dati di input
 
-Il file `input.txt` è composto da $M + 1$ righe, contenenti:
-
-- Riga $1$: gli interi $N$ ed $M$, il numero di nodi e di filamenti della tela.
-- Riga $2$ .. $M + 1$: due interi separati da spazio $u$, $v$; dove $u$ e $v$ identificano i due nodi ai capi del
-filamento $i$-esimo.
+Il file `input.txt` è composto da un’unica riga contenente l’unico intero $N$.
 
 ## Dati di output
 
-Il file `output.txt` deve essere composto da due righe, contenenti:
-
-- Riga $1$: il numero di spostamenti $L$ che Tecla deve compiere nella sua passeggiata.
-- Riga $2$: $L + 1$ numeri separati da uno spazio, di cui il primo e l’ultimo devono essere $0$ (nodo di
-partenza e di arrivo), e gli altri sono i nodi come visitati da Tecla nell’ordine (e possono avere
-ripetizioni).
+Il file `output.txt` deve essere composto da un’unica riga contenente una
+sequenza di cifre binarie che termina con `'1'` corrispondente ad $N$.
 
 ## Assunzioni
 
-- $1 \le N \le 30$.
-- $1 \le M \le 100$.
-- In ogni filamento, $u \ne v$ e sono entrambi compresi tra $0$ e $N - 1$.
-- Si garantisce l’esistenza di una soluzione: Ape Maya è spacciata!
+- $1 \le N \le 1\,000\,000$.
+- Potrebbero esserci più sequenze di cifre ugualmente valide.
 
 ## Esempi di input/output
 
-```
-3 3                  3
-0 1                  0 2 1 0
-1 2
-2 0
-```
-
-```
-8 12                 7
-0 1                  0 5 6 3 4 2 3 0
-1 2
-2 3
-3 0
-2 4
-3 4
-4 5
-5 6
-6 7
-7 0
-0 5
-6 3
-```
+| **input** | **output** |
+|-----------|------------|
+| 19        | 1011001    |
+| 9         | 11101      |
 
 ## Spiegazione
 
-Nel *primo caso di esempio*, la tela di Tecla è come nella figura seguente, dove il percorso da seguire è
-evidenziato in rosso:
+Il **primo caso di esempio** è quello discusso nel testo.
 
-FIGURA1
-
-Nel *secondo caso di esempio*, la tela e il percorso sono:
-
-FIGURA2
+Nel **secondo caso di esempio**, $9$ può essere ottenuto sia come $1+1+2+5$
+(come nell’output di esempio), oppure come $1 + 3 + 5$ (`10011`) e $1 + 8$
+(`100001`).

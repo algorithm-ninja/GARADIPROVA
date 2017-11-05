@@ -1,73 +1,73 @@
-# Appetito aracnide (tecla)
+# Sport intellettuali (scommessa)
 
 _Difficoltà: 2_
+Romeo è un grande appassionato di sport intellettuali, e adora ritrovarsi con gli amici per seguire le
+competizioni internazionali più avvincenti di questo tipo. Di recente, il gruppo di amici si è appassionato
+a uno sport molto particolare. In questo gioco, un mazzo di carte numerate da 0 a $N-1$ (dove $N$ è dispari)
+viene prima mescolato, e poi le carte vengono affiancate in linea retta sul tavolo. Ai telespettatori, per
+aumentare la suspence, vengono mostrati i numeri delle carte $C_0$ , $C_1$ , ... , $C_i$ , ... , $C_{N-1}$ nell’ordine così
+ottenuto. A questo punto i giocatori possono scoprire due carte disposte consecutivamente sul tavolo,
+e prenderle nel solo caso in cui queste due carte abbiano somma dispari. Se queste carte vengono prese,
+le altre vengono aggiustate quanto basta per riempire il buco lasciato libero. Il gioco prosegue quindi a
+questo modo finché nessun giocatore può più prendere carte.
 
-Ape Maya è rimasta intrappolata in un nodo della tela di Tecla, un ragno molto temuto tra le api
-dell’alveare. Tecla si affretta ad afferrarla ma, quando giunge su quel nodo, si accorge di non avere
-appetito, e dice “BLEAH”. Va detto che l’appetito dei ragni è molto particolare: ogni volta che percorrono
-un filamento della loro rete, essi invertono lo stato del loro stomaco tra “SLURP” e “BLEAH”. Tecla deve
-quindi farsi un giretto nella rete sperando di tornare da Maya in stato “SLURP”.
-
-La tela di Tecla è composta da $N$ nodi (numerati da $0$ a $N - 1$) connessi tra loro da $M$ filamenti. Tecla
-e Ape Maya all’inizio si trovano entrambe nel nodo $0$, e ogni filamento può essere attraversato da Tecla
-in entrambe le direzioni. Aiuta Tecla ad individuare una passeggiata funzionale al buon appetito!
+Romeo e i suoi amici, per sentirsi più partecipi, hanno oggi deciso di fare un "gioco nel gioco": all’inizio
+della partita, scommettono su quali carte pensano rimarranno sul tavolo una volta finita la partita. Aiuta
+Romeo, determinando quali carte potrebbero rimanere sul tavolo alla fine del gioco!
 
 ## Dati di input
 
-Il file `input.txt` è composto da $M + 1$ righe, contenenti:
+Il file `input.txt` è composto da 2 righe, contenenti:
 
-- Riga $1$: gli interi $N$ ed $M$, il numero di nodi e di filamenti della tela.
-- Riga $2$ .. $M + 1$: due interi separati da spazio $u$, $v$; dove $u$ e $v$ identificano i due nodi ai capi del
-filamento $i$-esimo.
+- Riga $1$: l'unico intero $N$.
+- Riga $2$: gli $N$ interi $C_i$ separati da spazio, nell'ordine in cui sono disposti sul tavolo.
 
 ## Dati di output
 
 Il file `output.txt` deve essere composto da due righe, contenenti:
 
-- Riga $1$: il numero di spostamenti $L$ che Tecla deve compiere nella sua passeggiata.
-- Riga $2$: $L + 1$ numeri separati da uno spazio, di cui il primo e l’ultimo devono essere $0$ (nodo di
-partenza e di arrivo), e gli altri sono i nodi come visitati da Tecla nell’ordine (e possono avere
-ripetizioni).
+- Riga $1$: il numero di diverse carte $K$ che potrebbero rimanere sul tavolo a fine partita.
+- Riga $2$: i $K$ interi che identificano le carte che potrebbero rimanere sul tavolo a fine partita.
 
 ## Assunzioni
 
-- $1 \le N \le 30$.
-- $1 \le M \le 100$.
-- In ogni filamento, $u \ne v$ e sono entrambi compresi tra $0$ e $N - 1$.
-- Si garantisce l’esistenza di una soluzione: Ape Maya è spacciata!
+- $1 \le N \le 100$.
+- $N$ è sempre un numero dispari.
+- $0 \le C_i \le N-1$ per ogni $i = 0...N-1$.
+- Ogni numero tra 0 e $N-1$ compare esattamente una volta nella sequenza dei $C_i$.
 
 ## Esempi di input/output
 
 ```
-3 3                  3
-0 1                  0 2 1 0
-1 2
-2 0
+3                                 1
+1 2 0                             0
 ```
 
 ```
-8 12                 7
-0 1                  0 5 6 3 4 2 3 0
-1 2
-2 3
-3 0
-2 4
-3 4
-4 5
-5 6
-6 7
-7 0
-0 5
-6 3
+11                                2
+1 0 2 6 4 5 3 9 8 10 7            2 8
 ```
 
 ## Spiegazione
 
-Nel *primo caso di esempio*, la tela di Tecla è come nella figura seguente, dove il percorso da seguire è
-evidenziato in rosso:
+Nel **primo caso di esempio**, l’unica mossa possibile è eliminare le carte 1 e 2 per cui rimane sul tavolo necessariamente la carta 0.
+Nel **secondo caso di esempio** sono invece possibili diverse sequenze di mosse. Una delle sequenze che lasciano la carta 2 è la seguente:
 
-FIGURA1
+```
+1 0 2 6 4-5 3 9 8 10 7
+  1-0 2 6 3 9 8 10 7
+    2 6-3 9 8 10 7
+      2 9 8 10 7
+        2 9-8
+          2
+```
 
-Nel *secondo caso di esempio*, la tela e il percorso sono:
-
-FIGURA2
+Una delle sequenze di mosse che lasciano la carta 8 è la seguente:
+```
+1-0 2 6 4 5 3 9 8 10 7
+  2 6 4-5 3 9 8 10 7
+    2 6 3 9 8 10-7
+      2 6-3 9 8
+        2-9 8
+          8
+```

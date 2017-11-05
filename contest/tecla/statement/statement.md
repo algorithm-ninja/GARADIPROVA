@@ -1,4 +1,4 @@
-<div style="font-variant: small-caps">Difficoltà: *2*</div>
+Difficoltà: *2*
 
 Ape Maya è rimasta intrappolata in un nodo della tela di Tecla, un ragno molto temuto tra le api
 dell’alveare. Tecla si affretta ad afferrarla ma, quando giunge su quel nodo, si accorge di non avere
@@ -36,14 +36,10 @@ ripetizioni).
 
 ## Esempi di input/output
 
-<table>
-  <tbody>
-    <tr>
-      <th align="center">input</th>
-      <th align="center">output</th>
-    </tr>
-    <tr>
-      <td align="left"><pre>2
+***
+
+**Input:**
+```
 3 3
 0 1
 1 2
@@ -60,18 +56,22 @@ ripetizioni).
 6 7
 7 0
 0 5
-6 3</pre>
-      </td>
-      <td align="left"><pre>Case #1:
+6 3
+```
+
+***
+
+**Output:**
+```
+Case #1:
 3
 0 2 1 0
 Case #2:
 7
-0 5 6 3 4 2 3 0</pre>
-      </td>
-    </tr>
-  </tbody>
-</table>
+0 5 6 3 4 2 3 0
+```
+
+***
 
 ## Spiegazione
 

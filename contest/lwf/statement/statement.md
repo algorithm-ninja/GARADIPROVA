@@ -10,7 +10,7 @@ $s_0 s_1 \ldots s_k$
 di cifre binarie `'0'` e `'1'`, di cui l’ultima è un `'1'`, in
 maniera tale che:
 
-$$ N = \sum_{i=0}^{k} s_i \cdot F_i $$
+\\[ N = \sum_{i=0}^{k} s_i \cdot F_i \\]
 
 dove $F_i$ è il numero di Fibonacci $i$-esimo. Più informalmente, una cifra $1$
 in posizione $i$ nella sequenza indica che il numero di Fibonacci $i$-esimo fa

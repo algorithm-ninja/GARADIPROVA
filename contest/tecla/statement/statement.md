@@ -41,8 +41,8 @@ ripetizioni).
 <table>
   <tbody>
     <tr>
-      <th align="center">inputttttttttttttttt</th>
-      <th align="center">outputtttttttttttttttttttttttttttt</th>
+      <th align="center">input</th>
+      <th align="center">output</th>
     </tr>
     <tr>
       <td align="left"><pre>2

@@ -1,0 +1,12 @@
+name: Territoriali 2018 - Demo
+description: |
+  Demo della fase territoriale delle _Olimpiadi Italiane di Informatica_.
+
+duration: 1000000000
+tasks:
+    - tecla
+users:
+    - token: demo
+      name: Nico
+      surname: Demo
+

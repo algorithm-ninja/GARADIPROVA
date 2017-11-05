@@ -1,84 +1,48 @@
-/* solutore oddcycle
-   Romeo 2017-03-15
-*/
+// Soluzione di lwf
+// Autore: Edoardo Morassutto
+// Complessità: O(N)
+// Breve spiegazione:
+//   Calcolo i numeri di Fibonacci fino ad N (incluso) e dal piu grande
+//   li prendo gready se ci stanno in N e diminuisco.
 
 #include <iostream>
-#include <cassert>
-#include <cstring>
-#include <vector>
-
-#define DEBUG 0
+#include <fstream>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
-const unsigned MAXN = 30;
-int seen[MAXN];
-int sex[MAXN];
-int cycle[MAXN], posW = 0;
+int fib[50];
 
-int N, M, L;
-vector<int> adj[MAXN];
+int solve(int t) {
+    int N;
+    cin >> N;
 
-bool odd_cycle(int node, int mysex) {
-  if ( seen[node] ) {
-    if ( sex[node] != mysex ) {
-      cycle[posW++] = node;
-      L = posW;
-      return true;
+    fib[0] = 1;
+    fib[1] = 1;
+    int i;
+    for (i = 2; fib[i-1]+fib[i-2] <= N; i++) {
+        fib[i] = fib[i-1]+fib[i-2];
     }
-    else
-      return false;
-  }
-  seen[node] = 1;
-  sex[node] = mysex;
-  cycle[posW++] = node;
-  for (int next: adj[node])
-    if ( odd_cycle(next, 1-mysex) )
-      return true;
-  posW--;
-  return false;
+    i--;
+
+    string s;
+    while (i >= 0) {
+        if (N >= fib[i]) {
+            s += '1';
+            N -= fib[i];
+        } else {
+            s += '0';
+        }
+        i--;
+    }
+    reverse(s.begin(), s.end());
+    cout << "Case #" << t << ": " << s << endl;
 }
 
 int main() {
-    int T;
-    cin >> T;
+	int T; cin >> T;
 
-    for (int t = 1; t <= T; t++) {
-	    memset(seen, 0, sizeof seen);
-	    memset(sex, 0, sizeof sex);
-	    memset(cycle, 0, sizeof cycle);
-	    L = 0;
-	    posW = 0;
-
-	    cin >> N >> M;
-	    cerr << "- " << N << " " << M << endl;
-	    for (int i=0; i<N; i++) adj[i].clear();
-
-	    for (int i=0; i<M; i++) {
-		int a, b;
-		cin >> a >> b;
-		assert(0 <= a && a < N);
-		assert(0 <= b && b < N);
-		adj[a].push_back( b );
-		adj[b].push_back( a );
-	    }
-
-	    assert( odd_cycle(0, 0) );
-
-	    int visitedTwice = cycle[L-1];
-	    bool repeat = false;
-	    for (int i=L-2; i >= 0; i--) {
-		if ( repeat )
-		    cycle[L++] = cycle[i];
-		if ( cycle[i] == visitedTwice )
-		    repeat = true;
-	    }    
-
-	    cout << "Case #" << t << ":" << endl << L-1 << endl;
-	    for (int i=0; i<L; i++)
-	      cout << cycle[i] << " ";
-	    cout << endl;
-    }
-
-    return 0;
+	for (int t = 1; t <= T; t++)
+		solve(t);
 }

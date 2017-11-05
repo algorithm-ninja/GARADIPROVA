@@ -6,6 +6,7 @@ from graph import *
 from sys import argv, exit, stderr
 import os
 from random import random, randint, choice, sample, shuffle, seed
+from math import sqrt, ceil
 
 usage="""Generatore di "oddcycle".
 
@@ -41,12 +42,14 @@ def run(N, M, T):
         g.addedges(M-g.M())
     # bipartito piu' almeno un arco mal fatto
     if T == 6:
-        N1 = randint(1,N-1)
+        assert M <= (N/2)*((N+1)/2) + 1
+        x = int(ceil( (N - sqrt(N*N - 4*M + 4))/2 ))
+        N1 = randint(x,N-x)
         N2 = N - N1
         g = ugraph(N1, N2, type='bipartite')
+        g.addedges(M-N, edgerange(g,[0,N1],[N1,N]))
         r = xrange(0,N1) if (N1>1 and randint(0,1)) or N2==1 else xrange(N1,N)
         g += sample(r, 2)
-        g.addedges(M-N, edgerange(g,[0,N1],[N1,N]))
     g.zero_based = True
     g.shuffle()
     print g

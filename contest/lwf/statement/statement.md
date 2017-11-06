@@ -47,7 +47,7 @@ corrispondente al valore di $N$ del testcase.
 
 ## Assunzioni
 
-- $1 \le T \le 100$.
+- $1 \le T \le 20$.
 - $1 \le N \le 1\,000\,000$.
 - Potrebbero esserci più sequenze di cifre ugualmente valide.
 

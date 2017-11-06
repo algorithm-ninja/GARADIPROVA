@@ -40,7 +40,7 @@ Il file di output deve essere composto da tre righe per ciascun testcase:
 
 ## Assunzioni
 
-- $1 \le T \le 100$.
+- $1 \le T \le 10$.
 - $1 \le N \le 100$.
 - $N$ è sempre un numero dispari.
 - $0 \le C_i \le N-1$ per ogni $i = 0...N-1$.

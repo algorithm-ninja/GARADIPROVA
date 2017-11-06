@@ -16,7 +16,7 @@ web_statementdir: /statements/secret/
 queue_size: 64
 
 # Password for the admin
-admin_token: secret
+admin_token: secret1
 
 # Number of proxies
 num_proxies: 0

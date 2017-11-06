@@ -16,7 +16,7 @@ La prima riga del file di input contiene un intero $T$, il numero di testcase.
 Seguono $T$ testcase, ognuno dei quali composto da $M + 1$ righe:
 
 - Riga $1$: gli interi $N$ ed $M$, il numero di nodi e di filamenti della tela.
-- Riga $2 \ldots M + 1$: due interi separati da spazio $u$, $v$; dove $u$ e $v$
+- Righe $2 \ldots M + 1$: due interi separati da spazio $u$, $v$; dove $u$ e $v$
   identificano i due nodi ai capi del filamento $i$-esimo.
 
 ## Dati di output

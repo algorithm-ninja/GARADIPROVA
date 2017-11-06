@@ -1,4 +1,4 @@
-Difficoltà: *1*
+**Difficoltà: _1_**
 
 Luca e William devono sovente scambiarsi delle segretissime informazioni
 riguardo alle selezioni territoriali, sotto forma di numeri interi $N$. Per

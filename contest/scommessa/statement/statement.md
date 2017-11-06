@@ -1,4 +1,4 @@
-Difficoltà: *2*
+**Difficoltà: _2_**
 
 Romeo è un grande appassionato di sport intellettuali, e adora ritrovarsi con
 gli amici per seguire le competizioni internazionali più avvincenti di questo

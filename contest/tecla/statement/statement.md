@@ -43,7 +43,9 @@ Il file di output deve essere composto da tre righe per ciascun testcase:
 ***
 
 **Input:**
+
 ```
+2
 3 3
 0 1
 1 2

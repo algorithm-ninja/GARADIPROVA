@@ -36,6 +36,7 @@ Il file di output deve essere composto da tre righe per ciascun testcase:
 
 ## Assunzioni
 
+- $1 \le T \le 100$.
 - $1 \le N \le 30$.
 - $1 \le M \le 100$.
 - In ogni filamento, $u \ne v$ e sono entrambi compresi tra $0$ e $N - 1$.

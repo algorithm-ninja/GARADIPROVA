@@ -23,9 +23,9 @@ viene calcolato sommando i due precedenti $F_i = F_{i-1} + F_{i-2}$.
 Per esempio, consideriamo la sequenza `1011001` di lunghezza $k = 7$. Visto che
 i primi $7$ numeri di Fibonacci sono:
 
-$1 \quad 1 \quad 2 \quad 3 \quad 5 \quad 8 \quad 13$
+\\[ 1 \quad 1 \quad 2 \quad 3 \quad 5 \quad 8 \quad 13 \\]
 
-il numero $N$ corrispondente è pari a $1 + 2 + 3 + 13 = 19$
+il numero $N$ corrispondente è pari a $1 + 2 + 3 + 13 = 19$.
 
 Luca ha già implementato l’algoritmo di decodifica (descritto come sopra), che
 da una sequenza di cifre binarie ricostruisce il numero $N$. Tuttavia William è
@@ -47,6 +47,7 @@ corrispondente al valore di $N$ del testcase.
 
 ## Assunzioni
 
+- $1 \le T \le 100$.
 - $1 \le N \le 1\,000\,000$.
 - Potrebbero esserci più sequenze di cifre ugualmente valide.
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from itertools import accumulate
-from parser import Parser
+from terry_cli.parser import Parser
 from sys import argv, exit, stderr
 
 if len(argv) != 3:

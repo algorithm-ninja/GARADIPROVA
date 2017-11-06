@@ -12,20 +12,24 @@ in entrambe le direzioni. Aiuta Tecla ad individuare una passeggiata funzionale 
 
 ## Dati di input
 
-Il file `input.txt` è composto da $M + 1$ righe, contenenti:
+La prima riga del file di input contiene un intero $T$, il numero di testcase.
+Seguono $T$ testcase, ognuno dei quali composto da $M + 1$ righe:
 
 - Riga $1$: gli interi $N$ ed $M$, il numero di nodi e di filamenti della tela.
-- Riga $2$ .. $M + 1$: due interi separati da spazio $u$, $v$; dove $u$ e $v$ identificano i due nodi ai capi del
-filamento $i$-esimo.
+- Riga $2 \ldots M + 1$: due interi separati da spazio $u$, $v$; dove $u$ e $v$
+  identificano i due nodi ai capi del filamento $i$-esimo.
 
 ## Dati di output
 
-Il file `output.txt` deve essere composto da due righe, contenenti:
+Il file di output deve essere composto da tre righe per ciascun testcase:
 
-- Riga $1$: il numero di spostamenti $L$ che Tecla deve compiere nella sua passeggiata.
-- Riga $2$: $L + 1$ numeri separati da uno spazio, di cui il primo e l’ultimo devono essere $0$ (nodo di
-partenza e di arrivo), e gli altri sono i nodi come visitati da Tecla nell’ordine (e possono avere
-ripetizioni).
+- Riga $1$: la dicitura `Case #x:` dove $x$ è il numero del testcase (a partire
+  da $1$).
+- Riga $2$: il numero di spostamenti $L$ che Tecla deve compiere nella sua
+  passeggiata.
+- Riga $3$: $L + 1$ numeri separati da uno spazio, di cui il primo e l’ultimo
+  devono essere $0$ (nodo di partenza e di arrivo), e gli altri sono i nodi come
+  visitati da Tecla nell’ordine (e possono avere ripetizioni).
 
 ## Assunzioni
 

@@ -34,12 +34,16 @@ produrre una sequenza di cifre binarie corrispondente. Implementalo tu!.
 
 ## Dati di input
 
-Il file `input.txt` è composto da un’unica riga contenente l’unico intero $N$.
+La prima riga del file di input contiene un intero $T$, il numero di testcase.
+Le successive $T$ righe contengono un intero ciascuna: il valore intero $N$ del
+relativo testcase.
 
 ## Dati di output
 
-Il file `output.txt` deve essere composto da un’unica riga contenente una
-sequenza di cifre binarie che termina con `'1'` corrispondente ad $N$.
+Il file di output deve essere composto da $T$ righe, ciascuna delle quali
+contenente la dicitura `Case #x: y` dove $x$ è il numero del testcase (a partire
+da $1$) e $y$ è una sequenza di cifre binarie che termina con `'1'`
+corrispondente al valore di $N$ del testcase.
 
 ## Assunzioni
 
@@ -52,6 +56,7 @@ sequenza di cifre binarie che termina con `'1'` corrispondente ad $N$.
 
 **Input:**
 ```
+2
 19
 9
 ```
@@ -60,8 +65,8 @@ sequenza di cifre binarie che termina con `'1'` corrispondente ad $N$.
 
 **Output:**
 ```
-1011001
-11101
+Case #1: 1011001
+Case #2: 11101
 ```
 
 ***

@@ -1,4 +1,4 @@
-#!/usr/bin/env pypy
+#!/usr/bin/env python2.7
 
 # versione 17.11.06
 #

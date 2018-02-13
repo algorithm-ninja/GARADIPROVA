@@ -2,7 +2,7 @@
 
 from sys import argv, exit, stderr
 from terry_cli.parser import Parser
-
+import json
 
 if len(argv) != 3:
     print("Usage: %s input_file output_file" % argv[0], file=stderr)
@@ -47,4 +47,5 @@ def evaluate(num, stream):
 
 
 parser = Parser(evaluate, T, human_output, int_max_len=20, strict_spaces=False)
-parser.run()
+
+print(json.dumps(parser.run()))

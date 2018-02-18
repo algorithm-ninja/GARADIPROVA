@@ -18,7 +18,4 @@ At this point, you should start the frontend (following instruction in the `terr
 
 You can use the `pack.zip.enc` file which is this contest zipped and encrypted with password `ed7ab1008ae6ca`. Some of
 the valid admin tokens are:
-- `EDOOOO-HGKU-2VPK-LBXL-B6NA` (user: `edo`)
-- `LUCAAA-3HVD-DS37-EDF7-HQW6` (user: `luca`)
-- `DARIOO-JD7B-NFLD-QY5O-SNRY` (user: `dario`)
-- `MULTII-3CYT-4WO3-LGGM-CMTX` (users: `multi1`, `multi2`, `multi3`)
+- `DEMOOO-ZRNG-SQHR-JMPH-WXTY` (user: `demo`)

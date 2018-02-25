@@ -14,7 +14,7 @@ using namespace std;
 
 int fib[50];
 
-int solve(int t) {
+void solve(int t) {
     int N;
     cin >> N;
 

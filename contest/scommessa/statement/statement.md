@@ -56,7 +56,7 @@ Il file di output deve essere composto da tre righe per ciascun testcase:
 3
 1 2 0
 11
-1 0 2 6 4 5 3 9 8 10
+1 0 2 6 4 5 3 9 8 10 7
 ```
 
 ***
